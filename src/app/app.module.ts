@@ -1,26 +1,43 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from  '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CrudLocalStorageComponent } from './crud-local-storage/crud-local-storage.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
+import { CrudFirebaseComponent } from './crud-firebase/crud-firebase.component';
+
+//Importamos las clases para trabajar con firestore
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
+//importamos la configuracion de firebase
+import { environment } from '../environments/environment';
+import { ShowComponent } from './components/show/show.component';
+import { CreateComponent } from './components/create/create.component';
+import { EditComponent } from './components/edit/edit.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CrudLocalStorageComponent,
+
     NavbarComponent,
-    HomeComponent
+    CrudFirebaseComponent,
+    ShowComponent,
+    CreateComponent,
+    EditComponent,
+
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

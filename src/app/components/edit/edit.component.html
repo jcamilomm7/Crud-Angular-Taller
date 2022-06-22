@@ -1,0 +1,45 @@
+<div>
+  <button
+  routerLink="/app-crud-firebase"
+  type="submit"
+  class="btn btn-primary btn-agregar">
+    Volver
+  </button>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Registro de empelados</h2>
+      <div class="card mt-4">
+        <div class="card-body">
+          <form [formGroup]="editForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="form-group">
+            <input
+            formControlName="nombre"
+              type="text"
+
+              placeholder="Nombre empleado"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+            formControlName="email"
+              type="email"
+              placeholder="email empleado"
+              class="form-control"
+            />
+          </div>
+          <button
+          type="submit"
+          class="btn btn-primary btn-agregar">
+            Editar
+          </button>
+        </form>
+        </div>
+      </div>
+    </div>
+

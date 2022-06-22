@@ -1,0 +1,25 @@
+
+<div class="d-grip gap-2 mt-4">
+  <a routerLink="/create" class="btn btn-primary btn-agregar-empleado" type="button">Agregar Empleado</a>
+</div>
+
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let empleado of empleados">
+      <td>{{ empleado.nombre }}</td>
+      <td>{{ empleado.email }}</td>
+      <td>
+        <button class="btn-editar" routerLink="/edit/{{ empleado.id }}">Editar</button>
+        <button class="btn-eliminar" (click)="delete(empleado)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

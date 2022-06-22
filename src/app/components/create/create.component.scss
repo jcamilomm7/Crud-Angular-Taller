@@ -1,0 +1,46 @@
+.container{
+  margin-top: 80px;
+  margin-left: 30%;
+
+}
+
+
+h2{
+  text-align: center;
+}
+
+input{
+  width: 90%;
+  margin-left: 5%;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.btn-agregar{
+  margin-top: 10px;
+  width: 30%;
+  margin-left: 35%;
+}
+
+table{
+  text-align: center;
+  justify-content: center;
+}
+
+.btn-editar{
+  margin-left: 10px;
+  width: 100px;
+}
+
+.btn-editar:hover{
+background-color: #009FFF;
+}
+
+.btn-eliminar{
+  margin-left: 10px;
+  width: 100px;
+}
+
+.btn-eliminar:hover{
+  background-color: #C70039 ;
+}
