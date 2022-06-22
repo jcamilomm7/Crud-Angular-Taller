@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Registro de empelados</h2>
+      <div class="card mt-4">
+        <div class="card-body">
+          <div class="card-title">{{ titulo }}</div>
+          <div class="form-group">
+            <input
+              type="text"
+              [(ngModel)]="empleadoSeleccionado.nombre"
+              placeholder="Nombre empleado"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              [(ngModel)]="empleadoSeleccionado.email"
+              placeholder="email empleado"
+              class="form-control"
+            />
+          </div>
+          <button (click)="agregarOrEditar()" class="btn btn-primary btn-agregar">
+            enviar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h2>lista de empleados</h2>
+      <table class="table table-success table-striped">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let empleado of empleados" >
+          <td>{{ empleado.id }}</td>
+          <td>{{ empleado.nombre }}</td>
+          <td>{{ empleado.email }}</td>
+          <td>
+            <button class="btn-editar" (click)="editar(empleado)">Editar</button>
+            <button class="btn-eliminar"  (click)="eliminar(empleado)">Eliminar</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

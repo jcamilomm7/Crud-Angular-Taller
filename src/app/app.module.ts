@@ -18,6 +18,7 @@ import { environment } from '../environments/environment';
 import { ShowComponent } from './components/show/show.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
+import { CrudLocalStorageComponent } from './crud-local-storage/crud-local-storage.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { EditComponent } from './components/edit/edit.component';
     ShowComponent,
     CreateComponent,
     EditComponent,
+    CrudLocalStorageComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule,
